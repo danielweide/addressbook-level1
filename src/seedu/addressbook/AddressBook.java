@@ -480,7 +480,8 @@ public class AddressBook {
             
         	boolean match = false;
             for (String keyword : keywords)
-            	if (getNameFromPerson(person).contains(keyword) || getEmailFromPerson(person).contains(keyword)) {
+            	if (getNameFromPerson(person).toLowerCase().contains(keyword.toLowerCase()) ||
+            			getEmailFromPerson(person).toLowerCase().contains(keyword.toLowerCase())) {
             		match = true;
             		break;
             	}
@@ -488,7 +489,7 @@ public class AddressBook {
             if (match)
             	matchedPersons.add(person);
             
-            System.out.println("Test Branch");
+            //System.out.println("Test Branch");
         	
             
            /* for(String wordsInNames: wordsInName) 
